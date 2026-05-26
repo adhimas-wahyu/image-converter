@@ -1,0 +1,62 @@
+/* Base Styles: Mobile First */
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+button,
+select {
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.secondary {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Desktop Adjustments: Screens wider than 600px */
+@media (min-width: 600px) {
+  .controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  button,
+  select {
+    width: auto;
+    padding: 8px 16px;
+  }
+}
