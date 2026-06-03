@@ -1,29 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Image Converter</title>
-  </head>
-  <body>
-    <div class="container">
-      <input type="file" id="upload" accept="image/*" />
-      <div class="controls">
-        <select id="format">
-          <option value="image/png">PNG</option>
-          <option value="image/jpeg">JPEG</option>
-          <option value="image/webp">WebP</option>
-          <option value="image/avif">AVIF</option>
-        </select>
-        <button id="convertBtn">Convert & Download</button>
-        <button id="clearBtn" class="secondary">Clear</button>
-      </div>
-      <div id="previewContainer">
-        <img id="preview" src="#" alt="Preview" style="display: none" />
-      </div>
-    </div>
-    <!-- JS -->
-    <script src="main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image Converter</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Image Converter</h1>
+            <section id="dropzone" class="dropzone">
+                <div class="upload-icon">☁️</div>
+                <h2>Select your file here to get started</h2>
+                <p>or drop your file here.</p>
+
+                <label for="upload" class="select-btn">
+                    <span>📄 Select File</span>
+                    <span class="arrow">⌄</span>
+                </label>
+                <input
+                    type="file"
+                    id="upload"
+                    accept="image/*"
+                    style="display: none"
+                />
+            </section>
+            <div id="previewContainer">
+                <img id="preview" src="#" alt="Preview" style="display: none" />
+            </div>
+            <section class="controls">
+                <div class="resize-controls">
+                    <h3>Resize (optional)</h3>
+                    <div class="resize-inputs">
+                        <input
+                            type="number"
+                            id="width"
+                            placeholder="Width (px)"
+                        />
+                        <input
+                            type="number"
+                            id="height"
+                            placeholder="Height (px)"
+                        />
+                    </div>
+                </div>
+                <select id="format">
+                    <option value="image/png">PNG</option>
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/webp">WebP</option>
+                    <option value="image/avif">AVIF</option>
+                    <option value="image/bmp">BMP</option>
+                </select>
+                <button id="convertBtn">Convert & Download</button>
+                <button id="clearBtn" class="secondary">Clear</button>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 Image Converter - Adhimas Wahyu. All rights reserved.</p>
+            <p class="privacy-note">
+                Privacy: Images are processed locally in your browser.
+            </p>
+        </footer>
+        <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+        <script src="main.js"></script>
+    </body>
 </html>
